@@ -24,10 +24,10 @@ const Game = (props) => {
                 <span>Question 1</span>/{questions.length}
             </div>
             {questions.map((question, index) => {
-                if (question.type == "boolean" ){
-                   return <QuestionCardTF key={index} question={question} />
+                if (question.type === "boolean" ){
+                   return <QuestionCard key={index} question={question} />
                 }else{
-                    return <QuestionCardMC key={index} question={question}/>
+                    return <QuestionCard key={index} question={question}/>
                 }
                 
               
