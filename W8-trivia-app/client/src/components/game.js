@@ -5,7 +5,25 @@ import QuestionCard from "./questioncard";
 const Game = (props) => {
 
     const [questions, setQuestions] = useState([]);
+const handleClick =(questionNum,userChoice)=>{
+let newQuestionArray =[];
+    for (let i =0;i<questions.length;i++){
+//push copy of the current questions into my new question array but not in one shot
+//make copy first 
+//maybe modify 
+//push
+let question = {...questions[i]}
+//this lets us know we are looking at the correct question in our state
+if(questionNum === i+1){
+question.questionChoice = userChoice;
 
+}
+
+newQuestionArray.push(question)
+
+}
+setQuestions(newQuestionArray)
+}
 
     const loadData = () => {
         //url is backend
