@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import QuestionCard from "./questioncard";
 
+
 const Game = (props) => {
 
     const [questions, setQuestions] = useState([]);
 
+
     const loadData = () => {
-        fetch('http://localhost:5060/api/game')
+        //url is backend
+        fetch('http://localhost:5700/api/game')
             .then((response) => response.json())
             .then(data => {
                 console.log("This is line 11", data.results);
@@ -20,15 +23,11 @@ const Game = (props) => {
 
     return (
         <div className="Container">
-            <div className='question-count'>
-                <span>Question 1</span>/{questions.length}
-            </div>
+            
             {questions.map((question, index) => {
-                if (question.type === "boolean" ){
-                   return <QuestionCard key={index} question={question} />
-                }else{
-                    return <QuestionCard key={index} question={question}/>
-                }
+               
+                    //these are questionCards the components given properties
+                   return <QuestionCard key={index} question={question} questions_count={questions.length} question_num={index+1}/>
                 
               
             })}
