@@ -5,25 +5,25 @@ import QuestionCard from "./questioncard";
 const Game = (props) => {
 
     const [questions, setQuestions] = useState([]);
-const handleClick =(questionNum,userChoice)=>{
-let newQuestionArray =[];
-    for (let i =0;i<questions.length;i++){
+//const handleClick =(questionNum,userChoice)=>{
+//let newQuestionArray =[];
+   // for (let i =0;i<questions.length;i++){
 //push copy of the current questions into my new question array but not in one shot
 //make copy first 
 //maybe modify 
 //push
-let question = {...questions[i]}
+//let question = {...questions[i]}
 //this lets us know we are looking at the correct question in our state
-if(questionNum === i+1){
-question.questionChoice = userChoice;
+//if(questionNum === i+1){
+//question.questionChoice = userChoice;
 
-}
+//}
 
-newQuestionArray.push(question)
+//newQuestionArray.push(question)
 
-}
-setQuestions(newQuestionArray)
-}
+//}
+//setQuestions(newQuestionArray)
+//}
 
     const loadData = () => {
         //url is backend
@@ -45,7 +45,7 @@ setQuestions(newQuestionArray)
             {questions.map((question, index) => {
                
                     //these are questionCards the components given properties
-                   return <QuestionCard key={index} question={question} questions_count={questions.length} question_num={index+1}/>
+                   return <QuestionCard key={index} question={question} questions_count={questions.length} question_num={index+1} />
                 
               
             })}
