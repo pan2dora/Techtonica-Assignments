@@ -7,7 +7,7 @@ import fetch from 'node-fetch';
 import {fakedataTF , fakedataMC, fakedataAny}  from './fakedata.js';
 
 const app = express();
-const PORT = 5060;
+const PORT = 5700;
 
 // Configuring cors middleware
 app.use(cors());
@@ -26,12 +26,14 @@ app.get("/", (req, res) => {
 
   //hardcode the game response for testing reasons to don't saturate my API call. 
 /*
-app.get('/api/game', (req, res) =>{
+app.get('/', (req, res) =>{
    res.json(fakedata);
 })
 */
 
+
 //make any 
+
 app.get('/api/game', async(req, res) =>{
   try {
     const URL = "https://opentdb.com/api.php?amount=7&category=12&difficulty=easy"
